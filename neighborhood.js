@@ -1,14 +1,11 @@
 let randomBtn = document.querySelector("#random")
+let amount = document.querySelectorAll(".restaurantLink")
+
 
 function randomRestaurant () {
-    let randomNumber = Math.floor(Math.random() * 3) + 1
-    if (randomNumber === 1) {
-        randomBtn.setAttribute("href", "https://www.cttacos.com/")
-    } else if (randomNumber === 2) {
-        randomBtn.setAttribute("href", "https://oceanandacre.com/")
-    } else {
-        randomBtn.setAttribute("href", "https://hobnobatlanta.com/")
-    }
+    let randomNumber = Math.floor(Math.random() * amount.length)
+    let randomHref = amount[randomNumber].getAttribute("href")
+    randomBtn.setAttribute("href", randomHref)
 }
 
 randomBtn.addEventListener("click", randomRestaurant)
